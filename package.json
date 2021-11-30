@@ -1,0 +1,41 @@
+{
+  "name": "clean-architect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "prepare": "husky install",
+    "start": "npm run build && node ./build/server.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "test": "echo \"No test defined\""
+  },
+  "keywords": [],
+  "author": "Ashutosh Patole",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.14",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.13.12",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15"
+  }
+}
