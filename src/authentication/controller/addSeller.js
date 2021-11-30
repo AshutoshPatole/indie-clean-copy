@@ -8,7 +8,7 @@ export default function addSellerUser({ addUser }) {
             return {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Last-Modified': new Date(posted.modifiedOn).toUTCString()
+                    'Last-Modified': new Date(added.updatedAt).toUTCString()
                 },
                 statusCode: 201,
                 body: { added }

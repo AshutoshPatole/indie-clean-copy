@@ -28,7 +28,7 @@ const buildUser = ({ Id, hash }) => {
             getPassword: () => hashPassword(),
             getMobile: () => mobile,
             getCreatedAt: () => createdAt,
-            getUpdateAt: () => updatedAt,
+            getUpdatedAt: () => updatedAt,
             markEmailVerified: () => {
                 emailVerified = true;
             },
