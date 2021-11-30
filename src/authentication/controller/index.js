@@ -1,6 +1,6 @@
 import { addUser } from "../user-case";
 import addSellerUser from "./addSeller";
 
-const addSeller = addSellerUser({ addUser });
+const sellerAuth = addSellerUser({ addUser });
 
-export default addSeller;
+export { sellerAuth };

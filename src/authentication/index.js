@@ -1,5 +1,5 @@
 import { Router } from "express";
-import addSeller from "./controller";
+import { sellerAuth } from "./controller";
 import makeCallBack from "./helper";
 
 const authRoute = Router();
@@ -9,6 +9,6 @@ authRoute.get('/', (req, res) => {
     return res.send('hello auth')
 })
 
-authRoute.post('/user', makeCallBack(addSeller));
+authRoute.post('/', makeCallBack(sellerAuth));
 
 export default authRoute;

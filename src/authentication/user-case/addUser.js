@@ -1,6 +1,6 @@
 import makeUser from "../entity";
 
-const makeAddUser = async ({ db }) => {
+const makeAddUser = ({ db }) => {
     return async function addUser(userInfo) {
         const user = makeUser(userInfo);
         const exists = await db.findbyEmail({ email: user.getEmail() })

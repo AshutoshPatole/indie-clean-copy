@@ -2,7 +2,7 @@ import crypto from 'crypto';
 import Id from '../../modules/helpers/id';
 import buildUser from './user';
 
-const makeUser = buildUser(Id, hash);
+const makeUser = buildUser({ Id, hash });
 
 function hash(text) {
     return crypto
