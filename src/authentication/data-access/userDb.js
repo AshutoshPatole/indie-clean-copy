@@ -1,14 +1,12 @@
 import Id from "../../modules/helpers/id";
-import User from "./userSchema";
 
 const makeUserDb = (db) => {
     const findById = async ({ id: _id }) => {
         const result = await db.findById({ _id });
         return result;
     }
-
     const insert = async ({ id: _id = Id.makeId(), ...userInfo }) => {
-        const user = User(userInfo);
+        const user = db(userInfo);
         const result = await user.save();
         return result;
     }
@@ -20,7 +18,6 @@ const makeUserDb = (db) => {
         catch (e) {
             throw new Error(e.message);
         }
-
     }
 
     return Object.freeze({

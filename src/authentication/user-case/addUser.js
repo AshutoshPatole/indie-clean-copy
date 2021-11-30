@@ -4,7 +4,6 @@ const makeAddUser = (db) => {
     return async function addUser(userInfo) {
         const user = makeUser(userInfo);
         const exists = await db.findByEmail({ email: user.getEmail() })
-        console.log(exists)
         if (exists) throw new Error("User exists");
         return db.insert({
             id: user.getId(),
