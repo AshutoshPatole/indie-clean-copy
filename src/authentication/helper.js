@@ -20,6 +20,7 @@ function makeExpressCallback(controller) {
                         res.set(httpResponse.headers)
                     }
                     res.type('json')
+                    console.log(httpResponse);
                     return res.status(httpResponse.statusCode).send(httpResponse.body);
                 })
                 .catch(e => res.status(500).send({ error: 'An unkown error occurred.' }))
